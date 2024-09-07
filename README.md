@@ -24,6 +24,19 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 Go to convex docs and install the convex package . Next, run npx convex dev .
 
+## Setting Up Clerk Authentication in Next.js
+
+1. Install Dependencies:
+
+bash
+Copy code
+npm install @clerk/nextjs convex 2. Configure Environment Variables: Add the following to your .env.local file:
+
+bash
+Copy code
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+NEXT_PUBLIC_CONVEX_URL=https://your-convex-url.convex.cloud 3. Create a Providers Component: In app/providers.tsx 4. Wrap Your App: Modify app/layout.tsx 5. Use Clerk Components in app/page.tsx 6. start your server
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
