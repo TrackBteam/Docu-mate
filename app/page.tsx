@@ -16,9 +16,9 @@ export default function Home() {
       </Unauthenticated>
       <Authenticated>
         <UserButton />
-        <button onClick={()=> {
-          createDocument({title:'hello'})
-        }}> Click Me </button>
+        <button onClick={() => {
+      createDocument({ title: 'hello' }); }}> Click Me</button>
+
       </Authenticated>
     </main>
   );

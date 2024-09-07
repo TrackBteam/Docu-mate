@@ -7,13 +7,11 @@ import { v } from "convex/values";
 export const createDocument = mutation({
   args: { title: v.string() }, // Define the expected argument type
   async handler(ctx, args) {
+    // Log the document you're inserting
+    console.log('Inserting document:', args.title);
+    
     // Insert data into the 'documents' collection
-    try {
-      await ctx.db.insert('documents', { title: args.title });
-    } catch (error) {
-      // Handle any errors that occur during insertion
-      console.error('Error inserting document:', error);
-      throw new Error('Failed to create document');
-    }
-  },
-});
+    await ctx.db.insert('documents', { title: args.title });
+  }
+  
+})
