@@ -39,18 +39,26 @@ NEXT_PUBLIC_CONVEX_URL=https://your-convex-url.convex.cloud
 
 3. Create a Providers Component: In app/providers.tsx </br>
 4. Wrap Your App: Modify app/layout.tsx <br>
-5. Use Clerk Components in app/page.tsx 6. start your server
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Use Clerk Components in app/page.tsx
+6. start your server
 
 ## Issues Handling
+
+# Resolving Mutation Issues
+
+Whenever you make changes to your Convex backend, remember to run npx convex codegen to regenerate the API files so that your frontend recognizes the updates.
+This setup ensures that Convex mutations are properly connected to your frontend and works smoothly with Clerk for authentication.
+
+
+
+
+
+
+
+
+
+
+
 
 
 ````
