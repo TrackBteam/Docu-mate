@@ -4,32 +4,31 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { api } from "@/convex/_generated/api";
 import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Authenticated, Unauthenticated, useMutation, useQuery } from "convex/react";
+import { DocumentCard } from "./document-card";
 
 export default function Home() {
   const documents=useQuery(api.documents.getDocuments)
   const createDocument = useMutation(api.documents.createDocument); // Using the mutation
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify">
-      <Unauthenticated>
+    <main className="p-24">
+      <h1 className="text-4xl font-bold">My Document</h1>
+   
        
-        <SignInButton />
-      </Unauthenticated>
-      <Authenticated>
-        <UserButton />
-        <ModeToggle/> 
-        <Button onClick={() => {
+ 
+        <Button className="my-[250px]" onClick={() => {
           createDocument({ title: 'hello' }); // Trigger mutation on click
-          console.log('Button clicked, creating document with title: hello'); // Log the click event
+         
         }}>
-          Click Me
+         Upload Document
         </Button>
 
-        {documents?.map((doc) => (
-          <div key={doc._id}>{doc.title}</div>
-        ))
+        <div className="grid grid-cols-4">{documents?.map((doc) => <DocumentCard
+        document={doc}/>
+        )
         }
-      </Authenticated>
+        </div>
+
     </main>
   );
 }
